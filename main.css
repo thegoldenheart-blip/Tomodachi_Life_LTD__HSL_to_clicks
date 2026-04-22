@@ -16,7 +16,7 @@ body {
     align-items: center;
     overflow: hidden;
     background: url("images/bg.png") no-repeat center / 150%;
-    transform: scale(1.8);
+    transform: scale(1.6);
 }
 
 h1 {

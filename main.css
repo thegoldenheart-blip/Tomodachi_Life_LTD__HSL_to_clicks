@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap');
+
+* {
+    box-sizing: border-box;
+    --mainColour: #FDA601;
+    --outlineColor: #000;
+    font-family: "DynaPuff", cursive;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background: url("images/bg.png") no-repeat center / 150%;
+    transform: scale(1.8);
+}
+
+h1 {
+    margin: 5px;
+    color: var(--mainColour);
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    margin-bottom: 10px;
+    font-size: 40px;
+}
+
+.inputBox {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 100px 58px 20px 58px;
+    gap: 8px;
+    padding: 15px;
+    width: fit-content;
+    border-radius: 8px;
+}
+
+img {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.2);
+}
+
+label {
+    text-align: right;
+    align-self: center;
+}
+
+.result {
+    text-align: center;
+}
+
+.inputBox input {
+    width: 100%;
+    text-align: center;
+    padding: 2px;
+    border-radius: 15px;
+    border: 2px solid rgb(220 220 220 / 0.78);
+}
+
+input:disabled {
+    background-color: white;
+    color: black;
+    opacity: 1;
+    cursor: default;
+    border: 2px solid rgb(220 220 220 / 0.78);
+}
+
+input::placeholder {
+    color: #e4e4e4;
+}
+
+button {
+    grid-column: 2 / 3;
+    margin-top: 30px;
+    padding: 4px 10px;
+    cursor: pointer;
+    background-color: #fdb201;
+    border: 2px solid #fba401;
+    border-radius: 15px;
+    transform: scale(2);
+    color: #ffffff;
+}

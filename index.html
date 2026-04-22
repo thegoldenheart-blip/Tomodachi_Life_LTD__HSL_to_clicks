@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TLLTD: HSL to Clicks </title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <h1>
+        HSL TO Clicks
+    </h1>
+    
+    <div class="inputBox">
+        <label for="hue">Hue</label>
+        <input type="text" id="hue" placeholder="value" class="baseInput">
+        <label for="hueResult" class="result">-></label>
+        <input type="text" id="hueResult" placeholder="Clicks" disabled>
+
+
+        <label for="saturation">Saturation</label>
+        <input type="text" id="saturation" placeholder="value" class="baseInput">
+        <label for="saturationResult" class="result">-></label>
+        <input type="text" id="saturationResult" placeholder="Clicks" disabled>
+
+
+        <label for="lightness">Lightness</label>
+        <input type="text" id="lightness" placeholder="value" class="baseInput">
+        <label for="lightnessResult" class="result">-></label>
+        <input type="text" id="lightnessResult" placeholder="Clicks" disabled>
+
+
+        <button onclick="calculateValues()">
+            Okay
+        </button>
+    </div>
+    <img src="/images/boxBG.png" alt="">
+</body>
+<script>
+    // const baseInputs = document.querySelectorAll(".baseInput");
+    //
+    // baseInputs.forEach(input => {
+    //     input.addEventListener("input", event => {
+    //         const hue = document.getElementById("hue");
+    //         const saturation = document.getElementById("saturation");
+    //         const lightness = document.getElementById("lightness");
+    //
+    //         const buttonOkayColour = document.getElementsByTagName("button")[0];
+    //
+    //         buttonOkayColour.style.color = `hsl(${hue.value}, ${saturation.value}%, ${lightness.value}%)`;
+    //     });
+    // });
+
+    function calculateValues() {
+        const hue = document.getElementById("hue")
+        const hueResult = document.getElementById("hueResult")
+        const saturation = document.getElementById("saturation")
+        const saturationResult = document.getElementById("saturationResult")
+        const lightness = document.getElementById("lightness")
+        const lightnessResult = document.getElementById("lightnessResult")
+
+        hueResult.value = Math.round((hue.value/360)*202)
+        saturationResult.value = Math.round((saturation.value/100)*213)
+        lightnessResult.value = Math.round((lightness.value/100)*111)
+
+        console.log("yus slay")
+    }
+</script>
+</html>

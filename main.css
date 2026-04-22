@@ -48,6 +48,28 @@ img {
     transform: translate(-50%, -50%) scale(0.2);
 }
 
+#moon {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    /* Keep your custom positioning */
+    transform: translate(-78%, -36%) scale(0.28);
+
+    /* You must give a div dimensions */
+    width: 500px;
+    height: 500px;
+
+    /* The Mask */
+    -webkit-mask-image: url("images/crescent-moon-svgrepo-com.svg");
+    mask-image: url("images/crescent-moon-svgrepo-com.svg");
+    -webkit-mask-repeat: no-repeat;
+    mask-size: contain;
+
+    /* The Color */
+    background-color: #f7b222;
+}
+
 label {
     text-align: right;
     align-self: center;
@@ -82,9 +104,20 @@ button {
     margin-top: 30px;
     padding: 4px 10px;
     cursor: pointer;
-    background-color: #fdb201;
-    border: 2px solid #fba401;
+    background-color: #fdbb04;
+    border: 2px solid #f5b122;
     border-radius: 15px;
     transform: scale(2);
     color: #ffffff;
+}
+
+@keyframes pulse {
+    0% { transform: scale(2); }
+    50% { transform: scale(1.7); }
+    100% { transform: scale(2); }
+}
+
+/* The class we will add via JavaScript */
+.play-animation {
+    animation: pulse 0.25s ease-out;
 }

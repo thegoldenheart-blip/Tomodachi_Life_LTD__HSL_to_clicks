@@ -34,22 +34,11 @@
         </button>
     </div>
     <img src="/images/boxBG.png" alt="">
+    <div id="moon"></div>
+
+
 </body>
 <script>
-    // const baseInputs = document.querySelectorAll(".baseInput");
-    //
-    // baseInputs.forEach(input => {
-    //     input.addEventListener("input", event => {
-    //         const hue = document.getElementById("hue");
-    //         const saturation = document.getElementById("saturation");
-    //         const lightness = document.getElementById("lightness");
-    //
-    //         const buttonOkayColour = document.getElementsByTagName("button")[0];
-    //
-    //         buttonOkayColour.style.color = `hsl(${hue.value}, ${saturation.value}%, ${lightness.value}%)`;
-    //     });
-    // });
-
     function calculateValues() {
         const hue = document.getElementById("hue")
         const hueResult = document.getElementById("hueResult")
@@ -57,7 +46,18 @@
         const saturationResult = document.getElementById("saturationResult")
         const lightness = document.getElementById("lightness")
         const lightnessResult = document.getElementById("lightnessResult")
+        const moonColour = document.getElementById("moon")
+        const btn = document.querySelector("button")
 
+        btn.classList.add("play-animation");
+        setTimeout(() => {
+            btn.classList.remove("play-animation");
+        }, 600);
+
+        // Change Moon Color
+        moonColour.style.backgroundColor = `hsl(${hue.value}, ${saturation.value}%, ${lightness.value}%)`;
+
+        // Do calculations
         hueResult.value = Math.round((hue.value/360)*202)
         saturationResult.value = Math.round((saturation.value/100)*213)
         lightnessResult.value = Math.round((lightness.value/100)*111)
